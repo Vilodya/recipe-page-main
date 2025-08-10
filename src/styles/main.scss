@@ -1,0 +1,181 @@
+@use 'reset';
+@use 'mixins' as *;
+
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+  background-color: var(--stone-100);
+}
+
+.hero {
+  width: 100%;
+  padding: 0;
+  aspect-ratio: 2.2 / 1;
+
+  &__image {
+    object-fit: cover;
+    object-position: center center;
+  }
+}
+
+.main {
+  padding: var(--spacing-500) var(--spacing-400);
+  background-color: var(--white);
+}
+
+.section {
+  &__title {
+    @include text-preset-2;
+  }
+
+  &__text {
+    @include text-preset-4;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-100);
+    list-style-position: inside;
+    list-style-type: disc;
+  }
+
+  &__list-item {
+    padding-left: var(--spacing-100);
+    @include text-preset-4;
+  }
+
+  &__list-item::marker {
+    color: var(--brown-800);
+  }
+}
+
+.text-bold {
+  @include text-bold;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  margin: var(--spacing-400) 0;
+  background-color: var(--stone-150);
+}
+
+.intro {
+  &__title {
+    color: var(--stone-900);
+    font-size: 36px;
+    @include text-preset-1;
+  }
+}
+
+.recipe-card {
+  margin: var(--spacing-400) 0;
+  padding: var(--spacing-300);
+  background-color: var(--rose-50);
+
+  &__title {
+    padding-bottom: var(--spacing-200);
+    @include text-preset-3;
+  }
+ 
+  &__list-item::marker {
+    color: var(--rose-800);
+  }
+}
+
+.instructions {
+  &__list {
+    list-style-type: decimal;
+  }
+
+  &__list-item::marker {
+    font-weight: var(--font-weight-700);
+  }
+}
+
+.nutrition {
+  &__table {
+    width: 100%;
+    margin-top: var(--spacing-150);
+    border-collapse: collapse;
+    @include text-preset-4;
+  }
+
+  &__row {
+    border-bottom: 1px solid var(--stone-150);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__cell {
+    padding: var(--spacing-150) 0 var(--spacing-150) var(--spacing-400);
+    vertical-align: middle;
+  }
+
+  &__value {
+    @include text-bold;
+    padding-right: var(--spacing-400);
+    padding-left: var(--spacing-200);
+    color: var(--brown-800);
+  }
+}
+
+.attribution {
+  align-self: stretch;
+  padding: 24px;
+  font-size: 11px;
+  text-align: center;
+  background-color: var(--white);
+
+  a {
+    color: hsl(228, 45%, 44%);
+  }
+}
+
+@media(min-width: 768px) {
+  .header,
+  .main {
+    max-width: 736px;
+    margin-inline-start: 76px;
+    margin-inline-end: 76px;
+    background-color: var(--white);
+  }
+
+  .header {
+    margin-block-start: var(--spacing-1600);
+    border-radius:  var(--spacing-300) var(--spacing-300) 0 0;
+    padding: var(--spacing-500) var(--spacing-500) 0;
+  }
+
+  .hero {
+      height: 300px;
+      border-radius: var(--spacing-150);
+      overflow: hidden;
+      aspect-ratio: auto;
+    
+    &__image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .main {
+    margin-block-end: var(--spacing-1600);
+    border-radius: 0 0 var(--spacing-300) var(--spacing-300);
+    padding: var(--spacing-500) var(--spacing-500);
+  }
+
+  .intro {
+    &__title {
+      @include text-preset-1;      
+      font-size: var(--spacing-500);
+    }
+  }
+}
+
