@@ -1,0 +1,232 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+select,
+option {
+  border: none;
+  padding: 0;
+  color: currentColor;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  appearance: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+  background-color: var(--stone-100);
+}
+
+.hero {
+  width: 100%;
+  padding: 0;
+  aspect-ratio: 2.2/1;
+}
+.hero__image {
+  object-fit: cover;
+  object-position: center center;
+}
+
+.main {
+  padding: var(--spacing-500) var(--spacing-400);
+  background-color: var(--white);
+}
+
+.section__title {
+  font-family: var(--accent-font);
+  font-weight: var(--font-weight-400);
+  line-height: var(--line-height-100);
+  font-size: 28px;
+  color: var(--brown-800);
+  padding-bottom: var(--spacing-300);
+}
+.section__text {
+  color: var(--stone-600);
+  font-family: var(--main-font);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-400);
+  line-height: var(--line-height-150);
+}
+.section__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-100);
+  list-style-position: inside;
+  list-style-type: disc;
+}
+.section__list-item {
+  padding-left: var(--spacing-100);
+  color: var(--stone-600);
+  font-family: var(--main-font);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-400);
+  line-height: var(--line-height-150);
+}
+.section__list-item::marker {
+  color: var(--brown-800);
+}
+
+.text-bold {
+  font-weight: var(--font-weight-700);
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  margin: var(--spacing-400) 0;
+  background-color: var(--stone-150);
+}
+
+.intro__title {
+  color: var(--stone-900);
+  font-size: 36px;
+  font-family: var(--accent-font);
+  font-weight: var(--font-weight-400);
+  line-height: var(--line-height-100);
+  font-size: 36px;
+}
+
+.recipe-card {
+  margin: var(--spacing-400) 0;
+  padding: var(--spacing-300);
+  background-color: var(--rose-50);
+}
+.recipe-card__title {
+  padding-bottom: var(--spacing-200);
+  font-family: var(--main-font);
+  line-height: var(--line-height-100);
+  font-size: 20px;
+  color: var(--rose-800);
+  font-weight: var(--font-weight-600);
+}
+.recipe-card__list-item::marker {
+  color: var(--rose-800);
+}
+
+.instructions__list {
+  list-style-type: decimal;
+}
+.instructions__list-item::marker {
+  font-weight: var(--font-weight-700);
+}
+
+.nutrition__table {
+  width: 100%;
+  margin-top: var(--spacing-150);
+  border-collapse: collapse;
+  color: var(--stone-600);
+  font-family: var(--main-font);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-400);
+  line-height: var(--line-height-150);
+}
+.nutrition__row {
+  border-bottom: 1px solid var(--stone-150);
+}
+.nutrition__row:last-child {
+  border-bottom: none;
+}
+.nutrition__cell {
+  padding: var(--spacing-150) 0 var(--spacing-150) var(--spacing-400);
+  vertical-align: middle;
+}
+.nutrition__value {
+  font-weight: var(--font-weight-700);
+  padding-right: var(--spacing-400);
+  padding-left: var(--spacing-200);
+  color: var(--brown-800);
+}
+
+.attribution {
+  align-self: stretch;
+  padding: 24px;
+  font-size: 11px;
+  text-align: center;
+  background-color: var(--white);
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 768px) {
+  .header,
+  .main {
+    max-width: 736px;
+    margin-inline-start: 76px;
+    margin-inline-end: 76px;
+    background-color: var(--white);
+  }
+  .header {
+    margin-block-start: var(--spacing-1600);
+    border-radius: var(--spacing-300) var(--spacing-300) 0 0;
+    padding: var(--spacing-500) var(--spacing-500) 0;
+  }
+  .hero {
+    height: 300px;
+    border-radius: var(--spacing-150);
+    overflow: hidden;
+    aspect-ratio: auto;
+  }
+  .hero__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .main {
+    margin-block-end: var(--spacing-1600);
+    border-radius: 0 0 var(--spacing-300) var(--spacing-300);
+    padding: var(--spacing-500) var(--spacing-500);
+  }
+  .intro__title {
+    font-family: var(--accent-font);
+    font-weight: var(--font-weight-400);
+    line-height: var(--line-height-100);
+    font-size: 36px;
+    font-size: var(--spacing-500);
+  }
+}
